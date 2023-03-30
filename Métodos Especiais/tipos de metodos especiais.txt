@@ -1,0 +1,7 @@
+Os métodos acessores, também conhecidos como métodos "getters", são métodos públicos que retornam valores de atributos privados ou protegidos.
+
+Os métodos modificadores, também conhecidos como métodos "setters", têm como característica poder alterar atributos protegidos ou privados sendo um método público.
+
+Métodos construtores, através deste método podemos deixar características predefinidas assim que um objeto for instanciado, seja esta característica um atributo ou um método. O método construtor também pode receber parâmetros após ser instanciado e operá-los conforme necessário.
+
+Feito as anotaçoes da aula teoriaca de tipos de métodos especias.
