@@ -6,6 +6,7 @@ class Caneta{
     public $cor;
     public $ponta;
     public $tampada;
+    public $carga;
 
     public function rabiscar(){
         

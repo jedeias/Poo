@@ -10,7 +10,7 @@ class Caneta{
     {
         $this->modelo = $newModelo;
         $this->cor = $newCor;
-        $this->Ponta = $newPonta;
+        $this->ponta = $newPonta;
         $this->tampar();
     }
 
