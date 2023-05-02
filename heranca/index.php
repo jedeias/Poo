@@ -1,7 +1,8 @@
 <?php
 
 
-include ("lutador.php");
+require_once ("lutador.php");
+require_once ("luta.php");
 
 $lutador = array();
 
@@ -12,14 +13,19 @@ $lutador[3] = new Lutador("Dead Code", "Australia", 28, 1.93, 81.6, 13, 0, 2);
 $lutador[4] = new Lutador("UFOColbol", "Brasil", 37, 1.70, 119.3, 5, 4, 3);
 $lutador[5] = new Lutador("Nerdaart", "Eua", 30, 1.81, 105.7, 12, 2, 4);
 
+$UFC = new Luta();
+$UFC->marcarLuta($lutador[0], $lutador[1]);
+$UFC->Luatar();
+
 
 echo"<pre>";
 
-foreach ($lutador as $lutadores){
-    echo"<hr>";
-    echo $lutadores->apresentar();
-    echo $lutadores->status();
-    echo"<hr>";
-}
+$lutador[0]->status();
+$lutador[1]->status();
+
+// foreach ($lutador as $lutadores){
+//     echo $lutadores->apresentar();
+//     echo $lutadores->status();
+// }
 
 ?>

@@ -15,14 +15,14 @@ class Lutador{
     private $empates;
 
     public function __construct($nome, $nacionalidade, $idade, $altura, $peso, $vitorias, $derrotas, $empates) {
-        $this->nome = $nome;
-        $this->naciolnalidade = $nacionalidade;
-        $this->idade = $idade;
-        $this->altura = $altura;
+        $this->setNome($nome);
+        $this->setNaciolnalidade($nacionalidade);
+        $this->setIdade($idade);
+        $this->setAltura($altura);
         $this->setPeso($peso);
-        $this->vitorias = $vitorias;
-        $this->derotas = $derrotas;
-        $this->empates = $empates;
+        $this->setVitorias($vitorias);
+        $this->setDerotas($derrotas);
+        $this->setEmpates($empates);
     }
 
 	public function getNome(){
@@ -117,7 +117,7 @@ class Lutador{
 
 	public function apresentar()
 	{
-		echo "<p>================================================================</p>";
+		echo "<hr>";
 		echo "<p> Lutardo " .$this->getNome() ."esta entrado para o combate";
 		echo "<p> Nacinalidade {$this->getNaciolnalidade()}</p>";
 
@@ -125,7 +125,7 @@ class Lutador{
 
 	public function status()
 	{
-		echo "<p>================================================================</p>";
+		echo "<hr>";
 		echo "<p> Com atuais " . $this->getVitorias() ." Vitorias e " . $this->getDerotas() . " Derrotas</p>";
 		echo "<p> tendo um total de {$this->getEmpates()} Empates</p>";
 	}
