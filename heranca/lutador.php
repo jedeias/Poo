@@ -14,22 +14,22 @@ class Lutador{
     private $derotas;
     private $empates;
 
-    public function __construct($nome,$naciolnalidade,$idade,$altura,$peso,$vitorias,$derotas,$empates){
-        $this->nome->setNome($nome);
-        $this->naciolnalidade->setNaciolnalidade($naciolnalidade);
-        $this->idade->setIdade($idade);
-        $this->altura->setAltura($altura);
-        $this->peso->setPeso($peso);
-        $this->vitorias->setVitorias($vitorias);
-        $this->derotas->setDerecos($derotas);
-        $this->empates->setEmpates($empates);
+    public function __construct($nome, $nacionalidade, $idade, $altura, $peso, $vitorias, $derrotas, $empates) {
+        $this->nome = $nome;
+        $this->naciolnalidade = $nacionalidade;
+        $this->idade = $idade;
+        $this->altura = $altura;
+        $this->setPeso($peso);
+        $this->vitorias = $vitorias;
+        $this->derotas = $derrotas;
+        $this->empates = $empates;
     }
 
-	public function getNome() {
+	public function getNome(){
 		return $this->nome;
 	}
 
-	public function setNome($nome): self {
+	public function setNome($nome){
 		$this->nome = $nome;
 		return $this;
 	}
@@ -67,6 +67,7 @@ class Lutador{
 
 	public function setPeso($peso): self {
 		$this->peso = $peso;
+		$this->setCategoria($peso);
 		return $this;
 	}
 
@@ -74,7 +75,7 @@ class Lutador{
 		return $this->categoria;
 	}
 
-	public function setCategoria($categoria): self {
+	private function setCategoria($categoria): self {
 		if($this->getPeso() <= 70.30){
 			$this->categoria = "Leve";
 		}elseif($this->getPeso() <= 80.90){
@@ -84,6 +85,7 @@ class Lutador{
 		}else{
 			$this->categoria = "Categoria incalida";
 		}
+		return $this;
 	}
 
 	public function getVitorias() {
@@ -95,7 +97,6 @@ class Lutador{
 		return $this;
 	}
 
-
 	public function getDerotas() {
 		return $this->derotas;
 	}
@@ -104,7 +105,6 @@ class Lutador{
 		$this->derotas = $derotas;
 		return $this;
 	}
-
 
 	public function getEmpates() {
 		return $this->empates;
@@ -115,8 +115,20 @@ class Lutador{
 		return $this;
 	}
 
+	public function apresentar()
+	{
+		echo "<p>================================================================</p>";
+		echo "<p> Lutardo " .$this->getNome() ."esta entrado para o combate";
+		echo "<p> Nacinalidade {$this->getNaciolnalidade()}</p>";
 
+	}
 
+	public function status()
+	{
+		echo "<p>================================================================</p>";
+		echo "<p> Com atuais " . $this->getVitorias() ." Vitorias e " . $this->getDerotas() . " Derrotas</p>";
+		echo "<p> tendo um total de {$this->getEmpates()} Empates</p>";
+	}
 
 }
 
