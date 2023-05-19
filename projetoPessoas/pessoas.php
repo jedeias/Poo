@@ -1,12 +1,12 @@
 <?php
 
-class Pesssoas{
+class Pessoas{
 
     private $nome;
     private $idade;
     private $sexo;
 
-    public function fazerAniversario() : int
+    public function fazerAniversario()
     {
         $this->idade ++;
     }

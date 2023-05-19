@@ -2,7 +2,7 @@
 
 require_once ("pessoas.php");
 
-class Aluno extends Pesssoas{
+class Aluno extends Pessoas{
 
     private int $matr;
     private $curso;    
